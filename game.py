@@ -1,21 +1,24 @@
 from board import Board
 
 def get_row_col (initiate_board : bool = False) -> int:
+    row, col = -1, -1
 
-    try :
-        row = str (input ('linha? '))
-        col = int (input ('coluna? '))
-    except:
-        print ('Erro na introduçao de dados')
-
-    if initiate_board:
-        try:
-            row = int (row)
+    while row == -1 or col == -1:
+        row, col = -1, -1
+        try :
+            row = str (input ('linha? '))
+            col = int (input ('coluna? '))
         except:
-            print ('row must be an integer')
-    else:
-        row = ord (row) - ord ('A')
-        col -= 1
+            print ('Erro na introduçao de dados')
+
+        if initiate_board:
+            try:
+                row = int (row)
+            except:
+                print ('row must be an integer')
+        if type (row) == str:
+            row = ord (row) - ord ('A')
+    col -= 1
     return row, col
 
 def interaction(board : Board) -> None:
@@ -32,6 +35,7 @@ def interaction(board : Board) -> None:
             cmd = input ('continue? ')
             if cmd == 'n':
                 break
+            print ('hey')
             main()
 
 def main ():
