@@ -1,0 +1,4 @@
+Must make 3 in a row (horizontal or vertical, diagonal is yet to be implemented)
+
+You can make a play on a square up to 3 between you and the opponet
+
