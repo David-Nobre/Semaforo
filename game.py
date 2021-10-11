@@ -16,9 +16,9 @@ def get_row_col (initiate_board : bool = False) -> int:
                 row = int (row)
             except:
                 print ('row must be an integer')
-        if type (row) == str:
+        else:
             row = ord (row) - ord ('A')
-    col -= 1
+            col -= 1
     return row, col
 
 def interaction(board : Board) -> None:
